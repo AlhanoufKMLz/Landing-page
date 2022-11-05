@@ -42,11 +42,12 @@ function inViewport(element) {
 
 // build the nav
 function buildNav(){
-    for(let i=1; i<5; i++){
+    sections.forEach(section => {
         let li = document.createElement("li");
-        li.innerHTML = "<a class='menu__link' href='#section"+i+"'> Section "+i+"</a>";
+        li.innerHTML = "<a class='menu__link' href='#"+section.getAttribute("id")+"'> "+section.dataset.nav+"</a>";
         document.getElementById("navbar__list").appendChild(li); 
     }
+    )
 }
 
 // Add class 'active' to section when near top of viewport
